@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="\trello\css\login.css">
+    <script src="https://kit.fontawesome.com/39272c37cc.js" crossorigin="anonymous"></script>
+    <style>
+        table{
+            border-spacing: 0px;
+        }
+        body {
+        background-image: url('../trello/img/logbg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;       
+}   
+        #container{
+        background-color: rgba(211, 211, 211, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form action="\trello\php\action.php" method="post"><center>
+            <h1>Sub Admin</h1></center>
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="uid" name="uid" required>
+            <label for="uid">User Id</label>
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="pass" name="pass" required>
+            <label for="pass">Password</label><center>
+            <input type="submit" id="submit" name="submit">
+        </center>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+body {
+    padding-top: 150px;
+    box-sizing: border-box;
+    font-size: 18px;
+    text-align: center;
+    justify-content: center;
+    background-image: url('admin.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+h1 {
+    margin-top: -5vh;
+    font-size: 50px;
+    position: relative;
+    color: aliceblue;
+
+}
+
+#container {
+    max-width: 800px;
+    padding: 0 15px;
+    margin: auto;
+    border: 1px solid black;
+    height: 70vh;
+    position: absolute;
+    margin-top: -15vh;
+    margin-left: 25vw;
+    width: 50vw;
+
+    opacity: 0.4;
+    background-color: rgb(0, 88, 88);
+}
+
+.field-holder {
+    position: relative;
+    margin-bottom: 1.25cm;
+}
+
+input {
+    border: 0;
+    border-bottom: 3px solid rgb(65, 63, 63);
+    outline: none;
+    background-color: none;
+    font-size: 20px;
+    height: 40px;
+    background-color: rgb(0, 88, 88, 0.4);
+    color: white;
+
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    cursor: text;
+    transition: .3s ease-in-out;
+    margin-left: 35vw;
+    font-size: 30px;
+    height: 45px;
+    color: aliceblue;
+}
+
+label,
+input {
+
+    width: 30%;
+
+}
+
+input:focus+label,
+input:valid+label {
+    color: rgb(131, 116, 116);
+    font-size: 25PX;
+    top: -25px;
+    pointer-events: none;
+}
+
+input:focus,
+input:valid {
+    border-bottom: 3px solid black;
+}
+
+button {
+    width: 20vw;
+    height: 7vh;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: blue;
+    color: aqua;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}

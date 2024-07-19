@@ -1,0 +1,101 @@
+<?php
+session_start();
+require_once 'function.php';
+require_once 'conect.php';
+
+$result = display();
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../trello/css/admin.css">
+    <link rel="stylesheet" href="../trello/css/stylel.css">
+</head>
+<body>
+    <header>
+        <img src="../trello/img/logo.png">
+        <h1>Module Monitoring</h1>
+    </header>
+    <div class="tn">
+                <button class="button" onclick="f1()">Table</button>
+                <button class="button" onclick="f2()">Notification</button>
+    </div>
+    <div id="container"><center>
+        <table>
+            <tr>
+                <th>Module</th>
+                <th>Year Level</th>
+                <th>Quatity</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr>
+                <?php
+                while($row = mysqli_fetch_assoc($result))
+                {
+            ?>
+            <td><?php echo $row['mname']; ?></td>
+            <td><?php echo $row['yl']; ?></td>
+            <td><?php echo $row['quan']; ?></td>
+            <td><a href="#" class="button1">Edit</a></td>
+            <td><a href="#" class="button2">Delete</a></td>
+            <?php
+                }
+            ?>
+            </tr>
+        </table>
+        <button onclick="format()">Add Data</button>
+    </center></div>
+
+
+    <div id="notif"><center>
+        <form action="#" method="post">
+            <input type="text" name="noti" id="noti" required value="">
+            <input type="submit" name="submit" id="submit">
+        </form></center>
+    </div>
+
+
+    <center>
+    <div id="form">
+        <h2>Insert Data</h2>
+        <form action="../trello/php/value.php" method="post">
+            <div class="field">
+                <input type="text" name="mname" id="mname" required>
+                <label>Module Name</label>
+            </div>
+            <div class="field">
+                <input type="text" name="yl" id="yl" required>
+                <label>Year Level</label>
+            </div>
+            <div class="field">
+                <input type="number" name="quanty" id="quanty" required>
+                <label>Quantity</label>
+            </div>
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </div></center>
+    </div>
+    <script>
+        const hs = document.querySelector('#form');
+        
+        let ic = true;
+        
+        let format = function () {
+            if (ic) {
+                hs.style.display = "block";
+                ic = false;
+            } else {
+                hs.style.display = 'none';
+                ic = true;
+            }
+        }
+    </script>
+    
+</body>
+</html>

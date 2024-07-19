@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../Users/reynalyn torres/Desktop/Advance Wev Dev"
+		},
+		{
+			"path": "../../capstone"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "trello"
+	}
+}

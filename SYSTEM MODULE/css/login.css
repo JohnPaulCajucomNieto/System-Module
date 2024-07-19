@@ -1,0 +1,82 @@
+#container {
+    border: 1px solid black;
+    position: relative;
+    width: 40vw;
+    height: 60vh;
+    margin: 30%;
+    margin-top: 15vh;
+   
+}
+
+form {
+    padding-left: 3vw;
+
+}
+
+h1 {
+    color: rgb(41, 18, 18);
+}
+
+label {
+    margin-top: -4vh;
+    position: absolute;
+    font-size: 15px;
+    margin-left: 3vw;
+    transition: .3s ease-in-out;
+}
+
+input {
+    margin-top: 4vh;
+    display: flex;
+    border-radius: 10px;
+    padding-left: 1vw;
+    height: 4vh;
+    width: 30vw;
+    margin-left: 2vw;
+}
+
+input:focus+label,
+input:valid+label {
+    margin-top: -6vh;
+    font-size: 10px;
+    background-color: white;
+}
+
+#submit {
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 10px;
+    width: 10vw;
+    height: 4vh;
+    text-align: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+    margin-right: 4vw;
+}
+
+#submit:hover {
+    background-color: blue;
+    height: 6vh;
+    width: 11vw;
+}
+
+.fa-solid {
+    margin-left: .5vw;
+    font-size: 25px;
+    position: absolute;
+    margin-top: .8vh;
+    margin-left: -1vw;
+}
+
+.fa-lock {
+    margin-top: 4.4vh;
+}
+
+.fa-brands {
+    font-size: 25px;
+    cursor: pointer;
+    margin-right: 1vw;
+    color: blueviolet;
+}

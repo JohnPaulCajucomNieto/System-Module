@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/39272c37cc.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="../trello/css/user.css">
+    <style>
+        th{
+            background-color:rgb(102, 190, 102);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="../trello/img/logo.png">
+        <h1>Module Monitoring</h1>
+        <i class="fa-solid fa-bell"></i>
+        
+    </header>
+    <div id="container"><center>
+        <table>
+            <tr>
+                <th>Module</th>
+                <th>Year Level</th>
+                <th>Quatity</th>
+            </tr>
+            <tr>
+                <?php
+                while($row = mysqli_fetch_assoc($result))
+                {
+            ?>
+            <td><?php echo $row['mname']; ?></td>
+            <td><?php echo $row['yl']; ?></td>
+            <td><?php echo $row['quan']; ?></td>
+            <?php
+                }
+            ?>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<?php
+session_start();
+require_once 'function.php';
+require_once 'conect.php';
+
+$result = display();
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="admin.css">
+<link rel="stylesheet" href="stylel.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png">
+        <h1>Module Monitoring</h1>
+    </header>
+<center>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">Modules</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Notifications</button>
+</div></center>
+<center>
+<div id="London" class="tabcontent">
+    <table>
+        <tr>
+            <th>Module</th>
+            <th>Year Level</th>
+            <th>Quatity</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr>
+            <?php
+            while($row = mysqli_fetch_assoc($result))
+            {
+        ?>
+        <tr>
+            <td><?php echo $row['mname']; ?></td>
+            <td><?php echo $row['yl']; ?></td>
+            <td><?php echo $row['quan']; ?></td>
+            <td><a href="update.php? update=<?php echo $row['id']; ?>" class="button1">Edit</a></td>
+            <td><a href="delete.php? delete=<?php echo $row['id']; ?>" class="button2">Delete</a></td>
+                </tr>
+        <?php
+            }
+        ?>
+        </tr>
+    </table>
+    <button id="addData" onclick="format()">Add Data</button>
+</div></center>
+
+<div id="Paris" class="tabcontent">
+    <center>
+        <form action="notifytbl.php" method="post">
+            <input type="text" name="noti" id="noti" required>
+            <input type="submit" name="submit" id="submit">
+        </form></center>
+</div>
+
+<center>
+    <div id="form">
+        <h2>Insert Data</h2>
+        <form action="value.php" method="post">
+            <div class="field">
+                <input type="text" name="mname" id="mname" required>
+                <label>Module Name</label>
+            </div>
+            <div class="field">
+                <input type="text" name="yl" id="yl" required>
+                <label>Year Level</label>
+            </div>
+            <div class="field">
+                <input type="number" name="quan" id="quan" required>
+                <label>Quantity</label>
+            </div>
+            <input type="submit" name="submit" id="submit">
+        </form>
+    </div></center>
+
+<script src="add.js"></script> 
+</body>
+</html> 
